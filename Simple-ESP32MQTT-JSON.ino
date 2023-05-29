@@ -47,8 +47,8 @@ void messageReceived(String &topic, String &payload) {
 
   // Condition if message received from "button" topic, it will turn on / off built in led
   if (topic == "button") {
-    if (String((const char*)myObject["name"]) == "esp32" && String((const char*)myObject["hw"]) == "buildInLED") {
-      ((int) myObject["pin"] == 1) ? digitalWrite(LED_BUILTIN, HIGH) : digitalWrite(LED_BUILTIN, LOW);
+    if (String((const char*)myObject["name"]) == "esp32" && String((const char*)myObject["hw"]) == "builtInLED") {
+      ((int) myObject["state"] == 1) ? digitalWrite(LED_BUILTIN, HIGH) : digitalWrite(LED_BUILTIN, LOW);
     }
   }
 }
